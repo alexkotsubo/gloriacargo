@@ -1102,6 +1102,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
 }
+.services__title .title {
+  margin-right: 30px;
+}
 .services__title .title__title h4 {
   transform: translate(-100%, 0);
   opacity: 0;

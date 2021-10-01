@@ -901,6 +901,7 @@ h1, h2, h3, h4, h5, h6 {
 		cursor: pointer;
 		flex: 0 1 33.333%;
 		overflow: hidden;
+		height: 280px;
 		max-height: 280px;
 		&-front {
 			text-align: center;
@@ -2190,6 +2191,7 @@ h1, h2, h3, h4, h5, h6 {
 	.header__cart {
 		flex-basis: 100%;
 		width: 100%;
+		height: 220px;
 		max-height: 220px;
 	}
 
@@ -2707,5 +2709,14 @@ h1, h2, h3, h4, h5, h6 {
 		&-image {
 			padding-bottom: 60%;
 		}
+	}
+
+	/* Header */
+	
+	.header__title {
+		margin-right: -20px;
+		margin-left: -20px;
+		font-size: 19px;
+		line-height: 22px;
 	}
 }

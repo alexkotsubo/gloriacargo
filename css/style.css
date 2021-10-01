@@ -2531,6 +2531,14 @@ h1, h2, h3, h4, h5, h6 {
   .news__cart-image {
     padding-bottom: 60%;
   }
+
+  /* Header */
+  .header__title {
+    margin-right: -20px;
+    margin-left: -20px;
+    font-size: 19px;
+    line-height: 22px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

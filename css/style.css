@@ -864,6 +864,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   flex: 0 1 33.333%;
   overflow: hidden;
+  height: 280px;
   max-height: 280px;
 }
 .header__cart-front {
@@ -2066,6 +2067,7 @@ h1, h2, h3, h4, h5, h6 {
   .header__cart {
     flex-basis: 100%;
     width: 100%;
+    height: 220px;
     max-height: 220px;
   }
 

@@ -202,34 +202,24 @@ for (let i = 0; i < featuresNumbersElems.length; i++) {
 }
 
 for (let i = 0; i < featuresNumbersElems.length; i++) {
-	// let value = 0;
-	// const num = featuresNumbers[i];
-	// const smooth = 40;
-	// const addNum = featuresNumbers[i] / smooth;
-	// const time = featuresNumbers[i] / addNum;
-	// const increment = setInterval(() => {
-	// 	if (value <= featuresNumbers[i]) {
-	// 		featuresNumbersElems[i].innerHTML = Math.trunc(value);
-	// 	} else {
-	// 		featuresNumbersElems[i].innerHTML = num;
-	// 		clearInterval(increment);
-	// 	}
-	// 	value += addNum;
-	// }, time);
-	let value = 0;
-	const num = featuresNumbers[i];
-	const seconds = 2000;
 	const smooth = 50;
-	const addNum = (seconds / smooth) / featuresNumbers[i];
-	const increment = setInterval(() => {
-		if (value <= featuresNumbers[i]) {
-			featuresNumbersElems[i].innerHTML = Math.trunc(value);
-		} else {
-			featuresNumbersElems[i].innerHTML = num;
-			clearInterval(increment);
-		}
-		value += addNum;
-	}, smooth);
+	const seconds = 1000;
+	if (smooth >= 50 && smooth <= seconds) {
+		let value = 0;
+		const num = featuresNumbers[i];
+		const period = seconds / smooth;
+		const addNum = featuresNumbers[i] / period;
+		const increment = setInterval(() => {
+			console.log(addNum)
+			if (value <= featuresNumbers[i]) {
+				featuresNumbersElems[i].innerHTML = Math.trunc(value);
+			} else {
+				featuresNumbersElems[i].innerHTML = num;
+				clearInterval(increment);
+			}
+			value += addNum;
+		}, smooth);
+	}
 }
 
 /* Burger */

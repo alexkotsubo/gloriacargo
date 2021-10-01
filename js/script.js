@@ -202,16 +202,34 @@ for (let i = 0; i < featuresNumbersElems.length; i++) {
 }
 
 for (let i = 0; i < featuresNumbersElems.length; i++) {
-	let y = 1;
-	const step = 2000 / featuresNumbers[i];
+	// let value = 0;
+	// const num = featuresNumbers[i];
+	// const smooth = 40;
+	// const addNum = featuresNumbers[i] / smooth;
+	// const time = featuresNumbers[i] / addNum;
+	// const increment = setInterval(() => {
+	// 	if (value <= featuresNumbers[i]) {
+	// 		featuresNumbersElems[i].innerHTML = Math.trunc(value);
+	// 	} else {
+	// 		featuresNumbersElems[i].innerHTML = num;
+	// 		clearInterval(increment);
+	// 	}
+	// 	value += addNum;
+	// }, time);
+	let value = 0;
+	const num = featuresNumbers[i];
+	const seconds = 2000;
+	const smooth = 50;
+	const addNum = (seconds / smooth) / featuresNumbers[i];
 	const increment = setInterval(() => {
-		if (y <= featuresNumbers[i]) {
-			featuresNumbersElems[i].innerHTML = y;
+		if (value <= featuresNumbers[i]) {
+			featuresNumbersElems[i].innerHTML = Math.trunc(value);
 		} else {
+			featuresNumbersElems[i].innerHTML = num;
 			clearInterval(increment);
 		}
-		y++;
-	}, step);
+		value += addNum;
+	}, smooth);
 }
 
 /* Burger */
@@ -315,21 +333,31 @@ function burgBodyUnLock() {
 
 /* Open Carts */
 
-const openCarts = document.querySelectorAll('.header__cart, .services__cart');
+const headerCarts = document.querySelectorAll('.header__cart');
+const servicesCarts = document.querySelectorAll('.services__cart');
 
 if (isMobile.any()) {
-	for (let i = 0; i < openCarts.length; i++) {
-		let open = false;
-		openCarts[i].addEventListener('click', e => {
-			if (!open) {
-				openCarts[i].classList.add('active');
-				open = true;
-			} else {
-				openCarts[i].classList.remove('active');
-				open = false;
+	const openCartsFunc = carts => {
+		for (let i = 0; i < carts.length; i++) {
+			let lastOpen = null;
+			const currentCarts = carts[i];
+			for (let i = 0; i < currentCarts.length; i++) {
+				currentCarts[i].addEventListener('click', e => {
+					if (lastOpen !== null) {
+						currentCarts[lastOpen].classList.remove('active');
+					}
+					if (lastOpen !== i) {
+						currentCarts[i].classList.add('active');
+						lastOpen = i;
+					} else {
+						currentCarts[i].classList.remove('active');
+						lastOpen = null;
+					}
+				});
 			}
-		});
-	}
+		}
+	};
+	openCartsFunc([headerCarts, servicesCarts]);
 }
 
 /* Popup */

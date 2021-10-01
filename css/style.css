@@ -795,7 +795,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   z-index: 1;
   transition: 5s;
-  animation: headerResize 5s infinite, changeHeaderSlide 5s infinite;
+  animation: headerResize 5s linear infinite, changeHeaderSlide 5s linear infinite;
 }
 .header__images {
   display: none;
@@ -920,8 +920,11 @@ h1, h2, h3, h4, h5, h6 {
   0% {
     transform: scale(1);
   }
+  90% {
+    transform: scale(1.1);
+  }
   100% {
-    transform: scale(1.2);
+    transform: scale(1);
   }
 }
 @keyframes changeHeaderSlide {
@@ -931,7 +934,7 @@ h1, h2, h3, h4, h5, h6 {
   20% {
     opacity: 1;
   }
-  90% {
+  70% {
     opacity: 1;
   }
   100% {

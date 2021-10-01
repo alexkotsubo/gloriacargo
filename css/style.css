@@ -741,6 +741,9 @@ h1, h2, h3, h4, h5, h6 {
 .search-modal__body form input::placeholder {
   opacity: 1;
 }
+.search-modal__close {
+  cursor: pointer;
+}
 .search-modal__close img {
   width: 30px;
   height: 30px;

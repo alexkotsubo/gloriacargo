@@ -1,0 +1,26 @@
+/* Header */
+.header {
+  background: url("../img/about.jpg") no-repeat center center/cover;
+}
+.header__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.header__container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header__title {
+  font-size: 54px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/*# sourceMappingURL=about.css.map */

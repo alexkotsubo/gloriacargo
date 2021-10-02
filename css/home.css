@@ -968,11 +968,6 @@
     margin: 0;
   }
 
-  /* Services */
-  .services__cart {
-    flex-basis: 100%;
-  }
-
   /* Mission */
   .mission__description-left h2 {
     margin-bottom: 25px;
@@ -1054,11 +1049,11 @@
   }
 
   .services__cart-inner {
-    padding: 25px;
+    padding: 16px;
   }
 
   .services__cart-back {
-    padding: 25px;
+    padding: 16px;
   }
 
   /* Mission */
@@ -1167,6 +1162,10 @@
   }
 
   /* Services */
+  .services__cart {
+    flex-basis: 100%;
+  }
+
   .services {
     padding: 50px 0;
   }

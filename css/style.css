@@ -950,6 +950,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 63px;
 }
 .footer__logo span {
+  white-space: nowrap;
   line-height: 25px;
   margin-left: 30px;
   color: #fff;
@@ -1062,16 +1063,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 80px;
   }
 
-  .footer__top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer__nav {
-    margin-left: 0;
-    margin-top: 40px;
-  }
-
   .footer__menu ul {
     margin-top: 20px;
   }
@@ -1093,6 +1084,26 @@ h1, h2, h3, h4, h5, h6 {
   /* Burger */
   .burger__menu {
     width: 70%;
+  }
+
+  /* Footer */
+  .footer__nav {
+    width: 100%;
+    margin-left: 40px;
+    justify-content: space-around;
+  }
+
+  .footer__menu:nth-child(2) {
+    display: none;
+  }
+
+  .footer__logo {
+    align-items: center;
+    margin: 0 auto;
+  }
+  .footer__logo span {
+    font-size: 20px;
+    margin-left: 15px;
   }
 }
 @media (max-width: 900px) {
@@ -1127,6 +1138,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
     flex-direction: column;
     align-items: center;
+    margin-left: 0;
   }
 
   .footer__menu {
@@ -1145,8 +1157,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
   }
 
+  .footer__logo img {
+    max-width: 53px;
+  }
+  .footer__logo span {
+    font-size: 25px;
+  }
+
   .footer__socials {
     display: flex;
+  }
+
+  .footer__top {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
   }
 
   /* Burger */
@@ -1157,6 +1182,22 @@ h1, h2, h3, h4, h5, h6 {
   /* Nav */
   .nav__btn {
     display: none;
+  }
+
+  /* Title */
+  .title__title {
+    height: 33px;
+  }
+  .title__title span {
+    line-height: 33px;
+    font-size: 46px;
+  }
+  .title__title h4 {
+    font-size: 16px;
+    top: 20px;
+  }
+  .title h3 {
+    font-size: 20px;
   }
 }
 @media (max-width: 575px) {
@@ -1177,22 +1218,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
     line-height: 18px;
     margin-left: 15px;
-  }
-
-  /* Title */
-  .title__title {
-    height: 33px;
-  }
-  .title__title span {
-    line-height: 33px;
-    font-size: 46px;
-  }
-  .title__title h4 {
-    font-size: 16px;
-    top: 20px;
-  }
-  .title h3 {
-    font-size: 20px;
   }
 
   /* Top Nav */
@@ -1217,14 +1242,6 @@ h1, h2, h3, h4, h5, h6 {
   }
   .footer__bottom p:last-child {
     margin-bottom: 0;
-  }
-
-  .footer__logo {
-    align-items: center;
-    margin: 0 auto;
-  }
-  .footer__logo span {
-    margin-left: 15px;
   }
 
   /* Burger */

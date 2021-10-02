@@ -19,25 +19,27 @@ const missionSlider = new Swiper('.mission__customers-reviews .swiper', {
 
 /* Header Slider */
 
-const headerImage = document.querySelector('#header .header__image');
-const headerImages = document.querySelectorAll('#header .header__images img');
-const headerImagesSrc = [];
-let headerImagesIndex = 0;
 
-for (let i = 0; i < headerImages.length; i++) {
-	headerImagesSrc.push(headerImages[i].src);
-}
+window.addEventListener('DOMContentLoaded', e => {
+	const headerImages = document.querySelectorAll('#header .header__images-image');
+	let i = 0;
 
-headerImage.style.backgroundImage = `url(${headerImagesSrc[headerImagesIndex]})`;
-headerImagesIndex += 1;
+	headerImages[i].classList.add('active');
+	i += 1;
 
-setInterval(() => {
-	if (headerImagesIndex === headerImages.length) {
-		headerImagesIndex = 0;
-	}
-	headerImage.style.backgroundImage = `url(${headerImagesSrc[headerImagesIndex]})`;
-	headerImagesIndex += 1;
-}, 5000);
+	setInterval(() => {
+		if (i === headerImages.length) {
+			i = 1;
+			headerImages[headerImages.length - 1].classList.remove('active');
+			headerImages[0].classList.add('active');
+			return;
+		}
+
+		if (i) headerImages[i - 1].classList.remove('active');
+		headerImages[i].classList.add('active');
+		i += 1;
+	}, 5000);
+});
 
 /* Header Text Change */
 
@@ -92,35 +94,6 @@ internationalBtnHide.addEventListener('click', e => {
 	internationalBtnHide.classList.remove('active');
 });
 
-/* Growing Numbers */
-
-const featuresNumbersElems = document.querySelectorAll('.features__cart-wrap h2');
-const featuresNumbers = [];
-
-for (let i = 0; i < featuresNumbersElems.length; i++) {
-	featuresNumbers.push(featuresNumbersElems[i].innerHTML);
-}
-
-for (let i = 0; i < featuresNumbersElems.length; i++) {
-	const smooth = 50;
-	const seconds = 1000;
-	if (smooth >= 50 && smooth <= seconds) {
-		let value = 0;
-		const num = featuresNumbers[i];
-		const period = seconds / smooth;
-		const addNum = featuresNumbers[i] / period;
-		const increment = setInterval(() => {
-			if (value <= featuresNumbers[i]) {
-				featuresNumbersElems[i].innerHTML = Math.trunc(value);
-			} else {
-				featuresNumbersElems[i].innerHTML = num;
-				clearInterval(increment);
-			}
-			value += addNum;
-		}, smooth);
-	}
-}
-
 /* Open Carts */
 
 const headerCarts = document.querySelectorAll('.header__cart');
@@ -149,3 +122,51 @@ if (isMobile.any()) {
 	};
 	openCartsFunc([headerCarts, servicesCarts]);
 }
+
+/* Growing Numbers */
+
+const animNumbers = () => {
+	const offset = elem => {
+		let rect = elem.getBoundingClientRect(),
+				scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+				scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return {top: rect.top + scrollTop, left: rect.left + scrollLeft};
+	}
+
+	const featuresNumbersElems = document.querySelectorAll('.features__cart-wrap h2');
+	const featuresNumbers = [];
+	for (let i = 0, length = featuresNumbersElems.length; i < length; i++) {
+		const animStart = 4;
+		let animItemPoint = window.innerHeight - featuresNumbersElems[i].offsetHeight / animStart;
+		if (featuresNumbersElems[i].offsetHeight > window.innerHeight) animItemPoint = window.innerHeight - window.innerHeight / animStart;
+		if ((pageYOffset > offset(featuresNumbersElems[i]).top - animItemPoint) && pageYOffset < (offset(featuresNumbersElems[i]).top + featuresNumbersElems[i].offsetHeight)) {
+			for (let y = 0; y < featuresNumbersElems.length; y++) {
+				featuresNumbers.push(featuresNumbersElems[y].innerHTML);
+			}
+
+			const smooth = 50;
+			const seconds = 1000;
+			if (smooth >= 50 && smooth <= seconds) {
+				let value = 0;
+				const num = featuresNumbers[i];
+				const period = seconds / smooth;
+				const addNum = featuresNumbers[i] / period;
+				const increment = setInterval(() => {
+					if (value <= featuresNumbers[i]) {
+						featuresNumbersElems[i].innerHTML = Math.trunc(value);
+					} else {
+						featuresNumbersElems[i].innerHTML = num;
+						clearInterval(increment);
+					}
+					value += addNum;
+				}, smooth);
+			}
+		}
+		if ((pageYOffset > offset(featuresNumbersElems[i]).top - animItemPoint) && pageYOffset < (offset(featuresNumbersElems[i]).top + featuresNumbersElems[i].offsetHeight) && featuresNumbersElems.length - 1 === i) {
+			window.removeEventListener('scroll', animNumbers);
+		}
+	}
+}
+
+window.addEventListener('scroll', animNumbers);
+animNumbers();

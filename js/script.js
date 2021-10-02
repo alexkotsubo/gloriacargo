@@ -80,7 +80,7 @@ if (animItems.length > 0) {
 	}
 
 	window.addEventListener('scroll', animItemsFunc);
-	setTimeout(animItemsFunc, 300);
+	animItemsFunc();
 }
 
 /* Burger */

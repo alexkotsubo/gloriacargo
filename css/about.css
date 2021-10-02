@@ -5,7 +5,7 @@
 .header__body {
   display: flex;
   flex-direction: column;
-  min-height: 400px;
+  min-height: 380px;
   background: rgba(0, 0, 0, 0.2);
 }
 .header__container {
@@ -13,6 +13,7 @@
   margin-bottom: auto;
 }
 .header__inner {
+  padding-bottom: 88px;
   display: flex;
   align-items: center;
   height: 100%;
@@ -21,6 +22,62 @@
   font-size: 54px;
   font-weight: 700;
   color: #fff;
+}
+
+/* About */
+.about__body {
+  display: flex;
+  align-items: flex-end;
+}
+.about__content {
+  margin-right: 70px;
+}
+.about__text {
+  margin-top: 40px;
+  line-height: 1.8;
+  color: #000;
+}
+.about__list {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.about__list li {
+  line-height: 1.8;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+.about__list li::before {
+  content: "";
+  display: block;
+  margin-right: 10px;
+  background: url("../img/icons/check.svg") no-repeat center center;
+  min-width: 17px;
+  width: 17px;
+  height: 14px;
+}
+.about__btns {
+  margin-top: 40px;
+}
+.about__advice {
+  position: relative;
+}
+.about__advice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+.about__image {
+  max-width: 500px;
+}
+.about__image img {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=about.css.map */

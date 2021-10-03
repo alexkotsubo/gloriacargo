@@ -1,0 +1,22 @@
+закрытие поиска + ссылки + центр попапа + убрать консоль лог + проверка + линии с проциками + оптимизация + карты наведение на wrap
+
+
+npx sass --watch source/scss:source/css
+
+
+// let value = 0;
+// const num = featuresNumbers[i];
+// const smooth = 40;
+// const addNum = featuresNumbers[i] / smooth;
+// const time = featuresNumbers[i] / addNum;
+// const increment = setInterval(() => {
+// 	if (value <= featuresNumbers[i]) {
+// 		featuresNumbersElems[i].innerHTML = Math.trunc(value);
+// 	} else {
+// 		featuresNumbersElems[i].innerHTML = num;
+// 		clearInterval(increment);
+// 	}
+// 	value += addNum;
+// }, time);
+
+word-wrap: break-word;

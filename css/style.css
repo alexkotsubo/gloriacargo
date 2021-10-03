@@ -959,6 +959,61 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(0, -5px);
 }
 
+/* About Page */
+.about-page {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about-page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.about-page__container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.about-page__inner {
+  padding-bottom: 88px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.about-page__title {
+  font-size: 54px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Interested */
+.interested {
+  background: url("../img/interested.jpeg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+}
+.interested__body {
+  padding: 290px 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.interested__subtitle {
+  font-size: 18px;
+}
+.interested__title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 40px;
+  transition: 0.8s;
+  opacity: 0;
+}
+.interested__title.active {
+  opacity: 1;
+}
+.interested__btn {
+  margin-top: 40px;
+}
+
 /* Footer */
 .footer {
   color: #fff;
@@ -1134,6 +1189,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 15px;
   }
 }
+@media (max-width: 991px) {
+  /* About Page */
+  .about-page__body {
+    min-height: 260px;
+  }
+
+  .about-page__title {
+    font-size: 35px;
+  }
+}
 @media (max-width: 900px) {
   /* Price Popup */
   .price-popup__body {
@@ -1144,8 +1209,37 @@ h1, h2, h3, h4, h5, h6 {
   .call-popup__body {
     min-width: 100%;
   }
+
+  /* Interested */
+  .interested__body {
+    padding: 130px 0;
+  }
+
+  .interested__btn {
+    margin-top: 25px;
+  }
+
+  .interested__title {
+    margin-top: 20px;
+  }
 }
 @media (max-width: 767px) {
+  /* About Page */
+  .about-page__body {
+    min-height: 220px;
+  }
+
+  .about-page__inner {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-page__title {
+    padding-bottom: 0;
+    font-size: 25px;
+  }
+
   /* Top Nav */
   .top-nav {
     display: none;
@@ -1259,6 +1353,15 @@ h1, h2, h3, h4, h5, h6 {
   }
   .top-nav__info li:last-child {
     margin-bottom: 0;
+  }
+
+  /* Interested */
+  .interested__subtitle {
+    font-size: 16px;
+  }
+
+  .interested__title {
+    font-size: 23px;
   }
 
   /* Footer */

@@ -1,27 +1,6 @@
-/* Header */
-.header {
-  background: url("../img/about.jpg") no-repeat center center/cover;
-}
-.header__body {
-  display: flex;
-  flex-direction: column;
-  min-height: 380px;
-  background: rgba(0, 0, 0, 0.2);
-}
-.header__container {
-  margin-top: auto;
-  margin-bottom: auto;
-}
-.header__inner {
-  padding-bottom: 88px;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-.header__title {
-  font-size: 54px;
-  font-weight: 700;
-  color: #fff;
+/* About Page */
+.about-page {
+  background-image: url("../img/about.jpg");
 }
 
 /* About */
@@ -330,29 +309,10 @@
 
 /* Interested */
 .interested {
-  background: url("../img/interested_2.jpg") no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
+  background-image: url("../img/interested_2.jpg");
 }
 .interested__body {
   padding: 160px 0;
-  background: rgba(0, 0, 0, 0.3);
-}
-.interested__subtitle {
-  font-size: 18px;
-}
-.interested__title {
-  font-size: 30px;
-  font-weight: 700;
-  margin-top: 40px;
-  transition: 0.8s;
-  opacity: 0;
-}
-.interested__title.active {
-  opacity: 1;
-}
-.interested__btn {
-  margin-top: 40px;
 }
 
 /* Media */
@@ -379,15 +339,6 @@
   }
 }
 @media (max-width: 991px) {
-  /* Header */
-  .header__body {
-    min-height: 260px;
-  }
-
-  .header__title {
-    font-size: 35px;
-  }
-
   /* About */
   .about__content {
     margin-right: 0;
@@ -412,37 +363,8 @@
   .care__cart:nth-child(2n) .care__cart-number::after {
     display: none;
   }
-
-  /* Interested */
-  .interested__body {
-    padding: 130px 0;
-  }
-
-  .interested__btn {
-    margin-top: 25px;
-  }
-
-  .interested__title {
-    margin-top: 20px;
-  }
 }
 @media (max-width: 767px) {
-  /* Header */
-  .header__body {
-    min-height: 220px;
-  }
-
-  .header__inner {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .header__title {
-    padding-bottom: 0;
-    font-size: 25px;
-  }
-
   /* About */
   .about .title__title span {
     font-size: 46px;
@@ -520,15 +442,6 @@
   }
 }
 @media (max-width: 575px) {
-  /* Interested */
-  .interested__subtitle {
-    font-size: 16px;
-  }
-
-  .interested__title {
-    font-size: 23px;
-  }
-
   /* Why */
   .why__description-left img {
     max-width: 100%;

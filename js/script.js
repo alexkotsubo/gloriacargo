@@ -29,7 +29,7 @@ ib();
 /* Navigation */
 
 const topNavHeight = document.querySelector('#top-nav').offsetHeight;
-const headerBody = document.querySelector('#header .header__body');
+const headerBody = document.querySelector('#header .nav-margin');
 
 const controlNavAddFix = () => {
 	nav.classList.add('fixed');

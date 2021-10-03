@@ -59,6 +59,29 @@ const controlNav = e => {
 controlNav();
 window.addEventListener('scroll', controlNav);
 
+/* Nav Search */
+
+const searchModal = document.querySelector('.search-modal');
+const navSearch = document.querySelector('.nav__search');
+const navSearchClose = document.querySelector('.search-modal__close');
+
+navSearch.addEventListener('click', e => {
+	body.classList.add('lock');
+	searchModal.classList.add('active');
+});
+
+navSearchClose.addEventListener('click', e => {
+	body.classList.remove('lock');
+	searchModal.classList.remove('active');
+});
+
+document.addEventListener('keydown', e => {
+	if (e.which === 27) {
+		body.classList.remove('lock');
+		searchModal.classList.remove('active');
+	}
+});
+
 /* Aminate Page */
 
 let animItems = document.querySelectorAll('.anim-item');

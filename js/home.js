@@ -19,7 +19,6 @@ const missionSlider = new Swiper('.mission__customers-reviews .swiper', {
 
 /* Header Slider */
 
-
 window.addEventListener('DOMContentLoaded', e => {
 	const headerImages = document.querySelectorAll('#header .header__images-image');
 	let i = 0;

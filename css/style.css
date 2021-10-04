@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 .burger {
   display: none;
   position: relative;
-  z-index: 5;
+  z-index: 100;
 }
 .burger__bg {
   width: 100%;
@@ -124,8 +124,6 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  position: relative;
-  z-index: 1;
   height: 16px;
 }
 .burger__btn span {
@@ -146,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   text-align: center;
   transition: 0.8s;
-  z-index: 2;
+  z-index: 100;
   overflow: auto;
   transform: translateX(100%);
 }
@@ -411,6 +409,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Title */
+.title {
+  position: relative;
+  z-index: 1;
+}
 .title__title {
   position: relative;
   height: 80px;
@@ -937,6 +939,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 35px;
   margin-bottom: 20px;
 }
+.nav__burger-languages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px 30px;
+}
+.nav__burger-languages li {
+  margin-right: 20px;
+}
+.nav__burger-languages li:last-child {
+  margin-right: 0;
+}
+.nav__burger-languages li a {
+  display: flex;
+  padding: 5px;
+}
 .nav__burger-socials {
   display: flex;
   align-items: center;
@@ -989,7 +1007,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Interested */
 .interested {
-  background: url("../img/interested.jpeg") no-repeat center center/cover;
+  background: url("../img/interested.jpg") no-repeat center center/cover;
   color: #fff;
   text-align: center;
 }

@@ -110,6 +110,10 @@
   color: #fff;
   perspective: 1000px;
 }
+.services__cart:nth-child(6) .services__cart-back ul li {
+  line-height: 1.5;
+  font-weight: 700;
+}
 .services__cart-wrap {
   position: relative;
   margin-top: 60px;
@@ -169,6 +173,15 @@
   margin-bottom: 25px;
   font-size: 14px;
   line-height: 1.7em;
+}
+.services__cart-back ul {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+.services__cart-back ul li {
+  line-height: 1.8;
+  list-style: disc;
 }
 .services__cart-icon {
   width: 50px;

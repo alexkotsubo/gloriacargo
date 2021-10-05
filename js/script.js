@@ -257,6 +257,27 @@ document.addEventListener('keydown', function(e) {
 	}
 });
 
+/* International Text */
+
+const internationalContent = document.querySelector('.international__content');
+const internationalContentWrap = document.querySelector('.international__content-wrap');
+const internationalBtnShow = document.querySelector('.international__btn-show');
+const internationalBtnHide = document.querySelector('.international__btn-hide');
+
+if (internationalContent && internationalContentWrap && internationalBtnShow && internationalBtnHide) {
+	internationalBtnShow.addEventListener('click', e => {
+		internationalContent.style.height = internationalContentWrap.offsetHeight + 'px';
+		internationalBtnShow.classList.remove('active');
+		internationalBtnHide.classList.add('active');
+	});
+	
+	internationalBtnHide.addEventListener('click', e => {
+		internationalContent.style.height = '52px';
+		internationalBtnShow.classList.add('active');
+		internationalBtnHide.classList.remove('active');
+	});
+}
+
 /* Open Menu Mobile */
 
 // const navNenuSub = document.querySelectorAll('.nav__menu_sub');

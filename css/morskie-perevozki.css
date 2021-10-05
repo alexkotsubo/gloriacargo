@@ -1,0 +1,14 @@
+/* About Page */
+.about-page {
+  background-image: url("../img/morskie-perevozki.jpg");
+}
+
+/* Interested */
+.interested {
+  background-image: url("../img/morskie-perevozki-interested.jpg");
+}
+.interested__body {
+  padding: 160px 0;
+}
+
+/*# sourceMappingURL=morskie-perevozki.css.map */

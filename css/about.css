@@ -51,11 +51,16 @@
   line-height: 1.8;
   color: #000;
 }
-.about__list {
+.about__lists {
   margin-top: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  display: flex;
+  align-items: flex-start;
+}
+.about__list {
+  margin-right: 50px;
+}
+.about__list:last-child {
+  margin-right: 0;
 }
 .about__list li {
   line-height: 1.8;
@@ -344,16 +349,16 @@
     margin-right: 0;
   }
 
+  .about .title__title span {
+    max-width: 100%;
+  }
+
   .about__body-image {
     display: none;
   }
 
   .about__image {
     display: flex;
-  }
-
-  .about .title__title span {
-    max-width: 100%;
   }
 
   /* Care */
@@ -375,9 +380,8 @@
   .about__text {
     font-size: 14px;
   }
-  .about__list {
-    grid-template-columns: 1fr;
-    grid-template-rows: unset;
+  .about__lists {
+    flex-direction: column;
   }
   .about__btns {
     justify-content: center;

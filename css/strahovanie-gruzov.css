@@ -1,0 +1,14 @@
+/* About Page */
+.about-page {
+  background-image: url("../img/strahovanie-gruzov.jpg");
+}
+
+/* Interested */
+.interested {
+  background-image: url("../img/strahovanie-gruzov-interested.jpg");
+}
+.interested__body {
+  padding: 160px 0;
+}
+
+/*# sourceMappingURL=strahovanie-gruzov.css.map */

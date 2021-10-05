@@ -1,0 +1,14 @@
+/* About Page */
+.about-page {
+  background-image: url("../img/zh-d-perevozki.jpg");
+}
+
+/* Interested */
+.interested {
+  background-image: url("../img/zh-d-perevozki-interested.jpg");
+}
+.interested__body {
+  padding: 160px 0;
+}
+
+/*# sourceMappingURL=zh-d-perevozki.css.map */

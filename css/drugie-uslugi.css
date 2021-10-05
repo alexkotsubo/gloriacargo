@@ -1,0 +1,14 @@
+/* About Page */
+.about-page {
+  background-image: url("../img/drugie-uslugi.jpg");
+}
+
+/* Interested */
+.interested {
+  background-image: url("../img/drugie-uslugi-interested.jpg");
+}
+.interested__body {
+  padding: 160px 0;
+}
+
+/*# sourceMappingURL=drugie-uslugi.css.map */

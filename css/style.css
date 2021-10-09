@@ -515,7 +515,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   overflow: hidden;
   transition: 1.5s;
-  background: url("../img/price-popup.jpeg") no-repeat center top/cover;
+  background: url("../img/price-popup.jpg") no-repeat center top/cover;
   max-width: 800px;
   padding-left: 300px;
 }

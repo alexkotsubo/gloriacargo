@@ -1,0 +1,155 @@
+/* About Page */
+.about-page {
+  background-image: url("../img/blog.jpg");
+}
+
+/* News */
+.news {
+  padding: 90px 0 120px;
+}
+.news__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.news__title .title__title h4 {
+  font-size: 23px;
+  transition: 0.8s;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+.news__title .title__title h4.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.news__title h3 {
+  font-size: 24px;
+  margin-top: 0;
+}
+.news__title-btn {
+  margin-right: 30px;
+}
+.news__carts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-right: -15px;
+}
+.news__cart {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 50%;
+}
+.news__cart-wrap {
+  margin-top: 30px;
+  margin-right: 15px;
+  height: 100%;
+}
+.news__cart-image {
+  display: block;
+  padding-bottom: 50%;
+}
+.news__cart-title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 28px;
+}
+.news__cart-text {
+  line-height: 23px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  font-size: 16px;
+  color: #7A7A7A;
+  flex: 1 1 auto;
+}
+.news__cart-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 30px 30px 30px;
+}
+
+/* Interested */
+.interested {
+  background-image: url("../img/blog-interested.jpg");
+}
+.interested__body {
+  padding: 160px 0;
+}
+
+/* Media */
+@media (max-width: 1199px) {
+  /* News */
+  .news__cart-image {
+    padding-bottom: 40%;
+  }
+}
+@media (max-width: 1000px) {
+  /* News */
+  .news {
+    padding: 60px 0 70px;
+  }
+
+  .news__cart-content {
+    padding: 25px;
+  }
+
+  .news__cart-text {
+    margin-top: 18px;
+    margin-bottom: 25px;
+  }
+
+  .news__title .title__title h4 {
+    font-size: 16px;
+    top: 30px;
+  }
+
+  .news__cart-title {
+    font-size: 17px;
+    line-height: 23px;
+  }
+}
+@media (max-width: 900px) {
+  /* News */
+  .news__cart-image {
+    padding-bottom: 30%;
+  }
+}
+@media (max-width: 767px) {
+  /* News */
+  .news__cart {
+    flex-basis: 100%;
+  }
+
+  .news__title .title__title h4 {
+    top: 15px;
+  }
+
+  .news__carts {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 575px) {
+  /* News */
+  .news__cart-image {
+    padding-bottom: 50%;
+  }
+
+  .news__title-btn {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 60px;
+  }
+
+  .news__carts {
+    margin-top: 0;
+  }
+}
+@media (max-width: 400px) {
+  /* News */
+  .news__cart-image {
+    padding-bottom: 60%;
+  }
+}
+
+/*# sourceMappingURL=blog.css.map */

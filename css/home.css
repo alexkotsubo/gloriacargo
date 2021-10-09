@@ -762,6 +762,14 @@
   padding: 40px 30px 30px 30px;
 }
 
+/* International */
+.international__title {
+  text-align: center;
+}
+.international__title_bold {
+  text-align: center;
+}
+
 /* Media */
 @media (max-width: 1350px) {
   /* Mission */

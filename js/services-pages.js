@@ -7,7 +7,7 @@ const additionalTabsNavs = document.querySelectorAll('.additional__tab-nav');
 const additionalTabsContent = document.querySelectorAll('.additional__tab-content');
 const additionalTabsWrap = document.querySelectorAll('.additional__tab-wrap');
 
-if (additionalTabs.length && additionalTabsNavs.length && additionalTabsContent.length && additionalTabsWrap.length) {
+if (additionalTabs.length === additionalTabsNavs.length && additionalTabs.length === additionalTabsContent.length && additionalTabs.length === additionalTabsWrap.length) {
 	for (let i = 0; i < additionalTabs.length; i++) {
 		let open = false;
 		additionalTabsNavs[i].addEventListener('click', e => {
@@ -30,33 +30,35 @@ if (additionalTabs.length && additionalTabsNavs.length && additionalTabsContent.
 
 /* Price Tabs */
 
-const priceTabs = document.querySelectorAll('.price__tab');
-const priceTabsWrap = document.querySelectorAll('.price__tab-wrap');
-const priceTabsBtns = document.querySelector('.price__btns-wrap');
-const priceTabsBtn = document.querySelectorAll('.price__btns-btn');
-const priceTabsCurrent = document.querySelector('.price__btns-current');
+window.addEventListener('DOMContentLoaded', e => {
+	const priceTabs = document.querySelectorAll('.price__tab');
+	const priceTabsWrap = document.querySelectorAll('.price__tab-wrap');
+	const priceTabsBtns = document.querySelector('.price__btns-wrap');
+	const priceTabsBtn = document.querySelectorAll('.price__btns-btn');
+	const priceTabsCurrent = document.querySelector('.price__btns-current');
 
-for (let i = 0; i < priceTabs.length; i++) {
-	const moving = priceTabsBtns.offsetWidth / priceTabs.length + 6;
-	let prevTab = 0;
-	
-	priceTabsBtn[prevTab].classList.add('active');
-	priceTabs[prevTab].classList.add('active');
-	priceTabsBtns.addEventListener('click', e => {
-		if (prevTab === priceTabsBtn.length - 1) {
+	priceTabsBtn[0].classList.add('active');
+	priceTabs[0].classList.add('active');
+	for (let i = 0; i < priceTabs.length; i++) {
+		const moving = priceTabsBtns.offsetWidth / priceTabs.length + 6;
+		let prevTab = 0;
+
+		priceTabsBtns.addEventListener('click', e => {
+			if (prevTab === priceTabsBtn.length - 1) {
+				priceTabsBtn[prevTab].classList.remove('active');
+				priceTabs[prevTab].classList.remove('active');
+				priceTabs[0].classList.add('active');
+				priceTabsBtn[0].classList.add('active');
+				prevTab = 0;
+				priceTabsCurrent.style.left = '3px';
+				return;
+			}
+			priceTabsCurrent.style.left = moving + 'px';
 			priceTabsBtn[prevTab].classList.remove('active');
 			priceTabs[prevTab].classList.remove('active');
-			priceTabs[0].classList.add('active');
-			priceTabsBtn[0].classList.add('active');
-			prevTab = 0;
-			priceTabsCurrent.style.left = '3px';
-			return;
-		}
-		priceTabsCurrent.style.left = moving + 'px';
-		priceTabsBtn[prevTab].classList.remove('active');
-		priceTabs[prevTab].classList.remove('active');
-		priceTabs[prevTab + 1].classList.add('active');
-		priceTabsBtn[prevTab + 1].classList.add('active');
-		prevTab += 1;
-	});
-}
+			priceTabs[prevTab + 1].classList.add('active');
+			priceTabsBtn[prevTab + 1].classList.add('active');
+			prevTab += 1;
+		});
+	}
+});

@@ -1,3 +1,31 @@
+@keyframes activateVariant {
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: 50%;
+  }
+  60% {
+    left: 60%;
+  }
+  80% {
+    left: 40%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes unActivateVariant {
+  0% {
+    left: 50%;
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+    left: 150%;
+  }
+}
 /* Logistics */
 .logistics {
   padding: 70px 0;
@@ -17,7 +45,7 @@
 }
 .logistics__left-title h4 {
   font-size: 20px;
-  top: 55px;
+  top: 37px;
   transform: translate(-100%, 0);
   opacity: 0;
   visibility: hidden;
@@ -440,9 +468,9 @@
   justify-content: center;
 }
 .price__cart-icon svg {
-  width: 56px;
-  height: 56px;
-  flex: 0 0 56px;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
 }
 .price__cart-icon:hover svg {
   fill: #3F01D1;
@@ -573,28 +601,28 @@
   }
 
   .about__content {
-    flex-basis: 60%;
+    flex-basis: 58%;
     margin-right: 0;
     order: 2;
     flex-basis: 80%;
   }
 
   .about__image {
-    flex-basis: 40%;
+    flex-basis: 42%;
     order: 1;
-    padding-right: 70px;
+    padding-right: 35px;
   }
   .about__image > img {
-    max-width: 70%;
+    max-width: 80%;
   }
   .about__image-img {
-    right: 70px;
+    right: 25px;
     top: 120px;
-    width: 50%;
+    width: 60%;
   }
 
   .about__title {
-    width: 60%;
+    width: 58%;
     margin-left: auto;
   }
   .about__title h2 {
@@ -678,7 +706,11 @@
   }
 
   .logistics__left-title h4 {
-    top: 30px;
+    top: 8px;
+  }
+
+  .logistics__left-title .title__title span {
+    font-size: 70px;
   }
 
   /* Additional */

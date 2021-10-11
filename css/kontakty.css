@@ -1,3 +1,31 @@
+@keyframes activateVariant {
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: 50%;
+  }
+  60% {
+    left: 60%;
+  }
+  80% {
+    left: 40%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes unActivateVariant {
+  0% {
+    left: 50%;
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+    left: 150%;
+  }
+}
 /* About Page */
 .about-page {
   background-image: url("../img/kontakty.jpg");
@@ -311,11 +339,20 @@
 @media (max-width: 1300px) {
   /* Contacts */
   .contacts__btns-btn {
-    padding: 10px;
+    padding: 6px;
+    font-size: 14px;
   }
 
   .contacts .title__title span {
     font-size: 52px;
+  }
+
+  .contacts__left {
+    flex-basis: 48%;
+  }
+
+  .contacts__right {
+    flex-basis: 52%;
   }
 }
 @media (max-width: 991px) {
@@ -373,6 +410,10 @@
   /* Contacts */
   .contacts .title h3 {
     font-size: 16px;
+  }
+
+  .contacts__btns {
+    margin-left: 0;
   }
 }
 @media (max-width: 767px) {
@@ -432,7 +473,20 @@
     flex-basis: 100%;
   }
 
+  .contacts__row {
+    flex-direction: column;
+  }
+  .contacts__row label:first-child {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .contacts__tab-contacts li {
+    font-size: 13px;
+  }
+
   .contacts__btns {
+    justify-content: center;
     margin-left: 0;
   }
   .contacts__btns-btn {

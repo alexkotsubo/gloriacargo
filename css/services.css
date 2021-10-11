@@ -1,3 +1,31 @@
+@keyframes activateVariant {
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: 50%;
+  }
+  60% {
+    left: 60%;
+  }
+  80% {
+    left: 40%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes unActivateVariant {
+  0% {
+    left: 50%;
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+    left: 150%;
+  }
+}
 /* About Page */
 .about-page {
   background-image: url("../img/services.jpg");

@@ -118,14 +118,15 @@
   width: 100%;
   background: #dedede;
 }
-.about__advice-icon {
-  min-width: 17px;
+.about__advice i {
+  font-size: 15px;
+  color: #3F01D1;
 }
 .about__advice-text {
   line-height: 1.8;
   color: #666;
   font-size: 14px;
-  margin-left: 7px;
+  margin-left: 11px;
 }
 .about__image {
   margin-bottom: 50px;
@@ -211,6 +212,7 @@
   margin-top: 20px;
 }
 .contacts__tab-list li {
+  line-height: 28px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -218,19 +220,20 @@
 .contacts__tab-list li:last-child {
   margin-bottom: 0;
 }
-.contacts__tab-list li svg {
-  width: 23px;
-  height: 19px;
+.contacts__tab-list li i {
+  font-size: 19px;
+  color: #3F01D1;
 }
 .contacts__tab-list li span {
   display: block;
-  margin-left: 5px;
+  margin-left: 11px;
 }
 .contacts__tab-list li a {
   display: block;
-  margin-left: 5px;
+  margin-left: 11px;
 }
 .contacts__tab-contacts li {
+  line-height: 28px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -238,17 +241,17 @@
 .contacts__tab-contacts li:last-child {
   margin-bottom: 0;
 }
-.contacts__tab-contacts li svg {
-  width: 23px;
-  height: 19px;
+.contacts__tab-contacts li i {
+  font-size: 19px;
+  color: #3F01D1;
 }
 .contacts__tab-contacts li span {
   display: block;
-  margin-left: 5px;
+  margin-left: 11px;
 }
 .contacts__tab-contacts li a {
   display: block;
-  margin-left: 5px;
+  margin-left: 11px;
 }
 .contacts__right {
   flex: 0 1 50%;
@@ -273,6 +276,9 @@
 .contacts__input:focus {
   border-color: #3F01D1;
 }
+.contacts__input::placeholder {
+  color: #afafaf;
+}
 .contacts__row {
   margin-bottom: 18px;
   width: 100%;
@@ -291,6 +297,10 @@
   border-radius: 21px;
   padding: 13px 10px;
   border: 1px solid #818a91;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../img/icons/down-solid.svg") no-repeat 100% 9px;
+  background-size: 28px 16px;
 }
 .contacts__select:focus {
   border-color: #3F01D1;
@@ -305,6 +315,9 @@
 }
 .contacts__number:focus {
   border-color: #3F01D1;
+}
+.contacts__number::placeholder {
+  color: #afafaf;
 }
 .contacts label {
   width: 100%;

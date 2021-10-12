@@ -220,15 +220,15 @@ h1, h2, h3, h4, h5, h6 {
   background: #3F01D1;
   color: #FEEA00;
 }
-.burger__link.active + .burger__list-arrow svg {
-  fill: #FEEA00;
+.burger__link.active + .burger__list-arrow i {
+  color: #FEEA00;
 }
 .burger__link:hover {
   background: #3F01D1;
   color: #fff;
 }
-.burger__link:hover + .burger__list-arrow svg {
-  fill: #fff;
+.burger__link:hover + .burger__list-arrow i {
+  color: #fff;
 }
 .burger.active .burger__menu {
   transform: translateX(0%);
@@ -255,19 +255,22 @@ h1, h2, h3, h4, h5, h6 {
 .burger__list-arrow {
   cursor: pointer;
   position: absolute;
-  top: 16px;
+  top: 22px;
   right: 16px;
   display: block;
   transition: 0.2s;
   display: flex;
+  padding: 2px;
 }
 .burger__list-arrow:hover {
   background: #3F01D1;
 }
-.burger__list-arrow:hover svg {
-  fill: #fff;
+.burger__list-arrow:hover i {
+  color: #fff;
 }
-.burger__list-arrow svg {
+.burger__list-arrow i {
+  color: #3F01D1;
+  font-size: 16px;
   transition: 0.2s;
 }
 .burger__list_sub {
@@ -434,19 +437,16 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   color: #3F01D1;
 }
-.btn_custom_3 svg {
+.btn_custom_3 i {
   transition: 0.2s;
   display: flex;
-  margin-right: 4px;
-  width: 21px;
+  margin-right: 6px;
+  font-size: 14px;
 }
 .btn_custom_3:hover, .btn_custom_3:focus {
   background: transparent;
   transform: none;
   color: #FEEA00;
-}
-.btn_custom_3:hover .btn__icon, .btn_custom_3:focus .btn__icon {
-  fill: #FEEA00;
 }
 .btn_radius {
   padding: 10px 16px;
@@ -536,10 +536,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Price Popup */
 .price-popup {
+  background: rgba(0, 0, 0, 0.8);
   transition: 1.5s;
 }
 .price-popup__body {
-  margin-top: 90px;
   padding: 0;
   overflow: hidden;
   transition: 1.5s;
@@ -604,6 +604,9 @@ h1, h2, h3, h4, h5, h6 {
 .price-popup__input:focus {
   border-color: #3F01D1;
 }
+.price-popup__input::placeholder {
+  color: #afafaf;
+}
 .price-popup__row {
   margin-bottom: 18px;
   width: 100%;
@@ -636,6 +639,9 @@ h1, h2, h3, h4, h5, h6 {
 .price-popup__number:focus {
   border-color: #3F01D1;
 }
+.price-popup__number::placeholder {
+  color: #afafaf;
+}
 .price-popup label {
   width: 100%;
   display: flex;
@@ -661,6 +667,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 13px;
   margin-bottom: 15px;
 }
+.price-popup .price-popup__textarea textarea::placeholder {
+  color: #afafaf;
+}
 .price-popup .price-popup__textarea textarea:focus {
   border-color: #3F01D1;
 }
@@ -680,7 +689,9 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: flex-end;
   min-height: 450px;
   min-width: 700px;
-  background: url("../img/call-popup.png") no-repeat right bottom/contain;
+  background: url("../img/call-popup.png") no-repeat;
+  background-position: top left;
+  background-size: 110% 120%;
   position: relative;
   transform: translate(100%, 0);
   transition: 1.5s;
@@ -753,6 +764,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #7A7A7A;
   font-size: 13px;
 }
+.call-popup__input::placeholder {
+  color: #b9b9b9;
+}
 
 /* Search Modal */
 .search-modal {
@@ -765,7 +779,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 200;
 }
 .search-modal.active {
@@ -795,10 +809,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   font-size: 50px;
   background: transparent;
-  color: #a5a3a3;
+  color: #fff;
 }
 .search-modal__body form input::placeholder {
   opacity: 1;
+  color: #a5a3a3;
 }
 .search-modal__close {
   cursor: pointer;
@@ -919,9 +934,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav__menu-arrow span {
   display: block;
-  width: 8px;
-  height: 8px;
-  background: url("../img/icons/expand_more.svg") no-repeat center center;
+  font-size: 8px;
+  color: #fff;
 }
 .nav__menu_sub:hover .nav__sub-menu {
   visibility: visible;
@@ -966,9 +980,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav__search {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background: url("../img/icons/search.svg") no-repeat center center;
+  font-size: 17px;
+  color: #fff;
   margin-right: 50px;
 }
 .nav__btn {
@@ -1014,19 +1027,18 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 20px;
 }
 .nav__burger-socials li {
-  width: 30px;
-  flex: 0 0 30px;
   margin-right: 40px;
   transition: 0.2s;
 }
-.nav__burger-socials li img {
-  max-width: 100%;
+.nav__burger-socials li i {
+  font-size: 36px;
+  color: #3F01D1;
+}
+.nav__burger-socials li i:hover {
+  color: #FEEA00;
 }
 .nav__burger-socials li:last-child {
   margin-right: 0;
-}
-.nav__burger-socials li:hover {
-  transform: translate(0, -5px);
 }
 
 /* About Page */
@@ -1065,7 +1077,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .interested__body {
   padding: 290px 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.32);
 }
 .interested__subtitle {
   font-size: 18px;
@@ -1107,7 +1119,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 .international__content ul {
-  padding-left: 30px;
+  padding-left: 45px;
   margin-bottom: 20px;
 }
 .international__content ul li {
@@ -1140,6 +1152,9 @@ h1, h2, h3, h4, h5, h6 {
 .international__btn {
   margin-top: 30px;
   display: none;
+}
+.international__btn i {
+  margin-right: 5px;
 }
 .international__btn.active {
   display: inline-flex;
@@ -1198,6 +1213,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer__menu {
   margin-right: 110px;
 }
+.footer__menu:nth-child(3) {
+  margin-right: 0;
+}
 .footer__menu h4 {
   font-size: 16px;
   font-weight: 700;
@@ -1214,9 +1232,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer__menu ul li {
   line-height: 30px;
-}
-.footer__menu:last-child {
-  margin-right: 0;
 }
 .footer__bottom {
   margin-top: 50px;
@@ -1252,6 +1267,57 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   font-display: swap;
 }
+/*!
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/fa-solid-900.eot");
+  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+.fa, .fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/*!
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fa-brands-400.eot");
+  src: url("../fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype"), url("../fonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+.fab {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
+/*!
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fa-regular-400.eot");
+  src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
 /* Media */
 @media (max-width: 1350px) {
   /* Nav */
@@ -1335,6 +1401,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 900px) {
+  /* Footer */
+  .footer__logo img {
+    max-width: 45px;
+  }
+
   /* Price Popup */
   .price-popup__body {
     padding-left: 0;
@@ -1431,9 +1502,19 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
   }
 
+  /* Interested */
+  .interested__body {
+    padding: 110px 0;
+  }
+
   /* Burger */
   .burger__menu {
     width: 85%;
+  }
+
+  /* News */
+  .news__title .title .title__title h4 {
+    top: 38px;
   }
 
   /* Nav */
@@ -1455,6 +1536,12 @@ h1, h2, h3, h4, h5, h6 {
   }
   .title h3 {
     font-size: 20px;
+  }
+
+  /* Call Popup */
+  .call-popup__body {
+    background-position: center bottom;
+    background-size: 280% 100%;
   }
 }
 @media (max-width: 575px) {
@@ -1544,10 +1631,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Call Popup */
-  .call-popup__body {
-    background-size: cover;
-  }
-
   .call-popup__title {
     font-size: 20px;
   }

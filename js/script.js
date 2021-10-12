@@ -82,6 +82,13 @@ document.addEventListener('keydown', e => {
 	}
 });
 
+document.documentElement.addEventListener('click', e => {
+	if (e.target.classList.contains('search-modal__body')) {
+		body.classList.remove('lock');
+		searchModal.classList.remove('active');
+	}
+});
+
 /* Aminate Page */
 
 let animItems = document.querySelectorAll('.anim-item');
@@ -256,6 +263,22 @@ document.addEventListener('keydown', function(e) {
 		closePopup(document.querySelector('.popup.open'));
 	}
 });
+
+const popupBody = document.querySelectorAll('.popup__body');
+
+const centerPopup = e => {
+	for (let i = 0; i < popupBody.length; i++) {
+		let value = (document.documentElement.clientHeight - popupBody[i].offsetHeight) / 2;
+		if (value < 0) {
+			popupBody[i].style.marginTop = '0px';
+			return;
+		}
+		popupBody[i].style.marginTop = value + 'px';
+	}
+};
+
+window.addEventListener('resize', centerPopup);
+centerPopup();
 
 /* International Text */
 

@@ -6,6 +6,7 @@ const missionSlider = new Swiper('.mission__customers-reviews .swiper', {
 	loop: true,
 	slidesPerView: 1,
 	spaceBetween: 50,
+	autoHeight: true,
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
@@ -59,7 +60,7 @@ window.addEventListener('DOMContentLoaded', e => {
 
 	setTimeout(() => {
 		headerVariant.style.width = 0;
-	}, 2700);
+	}, 2200);
 
 	setInterval(() => {
 		if (headerTitlesIndex === headerTitles.length) {
@@ -70,7 +71,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		headerVariant.style.width = `${headerVariantText.offsetWidth}px`;
 		setTimeout(() => {
 			headerVariant.style.width = 0;
-		}, 2700);
+		}, 2200);
 	}, 3000);
 });
 

@@ -120,20 +120,23 @@
   background: transparent;
   overflow: hidden;
 }
-.calc__variants-wrap .calc__variants-active span {
+.calc__variants-wrap .calc__variants-active i {
+  font-size: 18px;
+  color: #fff;
   position: absolute;
   top: 50%;
   left: -50%;
-  display: block;
   transform: translate(-50%, -50%);
-  background: url("../img/icons/local_shipping.svg") #3400af no-repeat center center;
-  background-size: 70%;
+  background: #3400af;
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: unActivateVariant 0.2s forwards;
 }
-.calc__variants-wrap.active .calc__variants-active span {
+.calc__variants-wrap.active .calc__variants-active i {
   animation: activateVariant 0.2s 0.2s forwards;
 }
 .calc__variants-wrap h4 {
@@ -142,7 +145,7 @@
   font-size: 16px;
   color: #494949;
 }
-.calc__variants-wrap:hover .calc__variants-img {
+.calc__variants-wrap:hover .calc__variants-img, .calc__variants-wrap.active .calc__variants-img {
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
 }
 .calc__variants-img {
@@ -190,8 +193,12 @@
 .calc__calc-checkboxes label input:checked + span::before {
   animation: checkbox 0.3s;
 }
+.calc__calc-checkboxes label input::placeholder {
+  color: #999;
+}
 .calc__calc-checkboxes label p {
   order: 2;
+  font-size: 14px;
 }
 .calc__calc-checkboxes label span {
   order: 1;
@@ -232,6 +239,7 @@
   display: flex;
   flex-direction: column;
   font-size: 16px;
+  color: #575757;
 }
 .calc__calc-inputs label input {
   margin-top: 5px;
@@ -249,6 +257,7 @@
   align-items: center;
 }
 .calc__contact-row label {
+  transition: 0.3s;
   position: relative;
   width: 100%;
   margin-right: 30px;
@@ -267,8 +276,9 @@
   border-right: 1px solid #3F01D1;
   background: transparent;
 }
-.calc__contact-row label span img {
-  width: 22px;
+.calc__contact-row label span i {
+  color: #3F01D1;
+  font-size: 14px;
 }
 .calc__contact-row label input {
   width: 100%;
@@ -277,10 +287,24 @@
   height: 42px;
   color: #9e9e9e;
 }
+.calc__contact-row label input::placeholder {
+  color: #999;
+}
 .calc__contact-row label::after {
   content: "";
   display: none;
   background: url("../img/icons/warning.svg") no-repeat center center/contain;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translate(0, -50%);
+}
+.calc__contact-row label::before {
+  content: "";
+  display: none;
+  background: url("../img/icons/success.svg") no-repeat center center/contain;
   width: 17px;
   height: 17px;
   position: absolute;
@@ -295,6 +319,15 @@
   border-color: #f77b72;
 }
 .calc__contact-row label.error::after {
+  display: block;
+}
+.calc__contact-row label.success {
+  border-color: #8bc34a;
+}
+.calc__contact-row label.success span {
+  border-color: #8bc34a;
+}
+.calc__contact-row label.success::before {
   display: block;
 }
 .calc__contact-get {
@@ -325,12 +358,14 @@
   justify-content: center;
 }
 .calc__contact-discount span {
+  display: inline-block;
   color: #fff;
   font-size: 19px;
+  margin-right: 8px;
 }
-.calc__contact-discount img {
-  margin-left: 8px;
-  width: 23px;
+.calc__contact-discount i {
+  color: #fff;
+  font-size: 18px;
 }
 .calc__contact-btn {
   margin-top: 15px;

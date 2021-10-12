@@ -3,6 +3,60 @@ const calcLine = document.querySelector('.calc__line-percent');
 const calcVariantsList = document.querySelectorAll('.calc__variants-list');
 const calcContactDiscount = document.querySelector('.calc__contact-discount span');
 let activeVariant = null;
+const calcContactForm = document.querySelector('.calc__contact-form');
+const calcContactInput = document.querySelectorAll('.calc__contact-form input');
+const calcContactLabel = document.querySelectorAll('.calc__contact-form label');
+let listInputs = [];
+for (let i = 0; i < calcContactInput.length; i++) {
+	listInputs.push(false);
+}
+calcContactForm.addEventListener('submit', e => {
+	e.preventDefault();
+	for (let i = 0; i < calcContactInput.length; i++) {
+		if (calcContactInput[i].value) {
+			if (calcContactInput[i].name === 'name') {
+				if (calcContactLabel[i].classList.contains('error')) {
+					calcContactLabel[i].classList.remove('error');
+					calcContactLabel[i].classList.add('success');
+					listInputs[i] = false;
+					setTimeout(() => {
+						calcContactLabel[i].classList.remove('success');
+					}, 1500);
+				}
+			}
+			if (calcContactInput[i].name === 'phone') {
+				if (/^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/.test(calcContactInput[i].value)) {
+					if (calcContactLabel[i].classList.contains('error')) {
+						calcContactLabel[i].classList.remove('error');
+						calcContactLabel[i].classList.add('success');
+						listInputs[i] = false;
+						setTimeout(() => {
+							calcContactLabel[i].classList.remove('success');
+						}, 1500);
+					}
+				} else {
+					calcContactLabel[i].classList.add('error');
+					listInputs[i] = true;
+				}
+			}
+		} else {
+			calcContactLabel[i].classList.add('error');
+			listInputs[i] = true;
+		}
+	}
+	let error = false;
+	for (let i = 0; i < listInputs.length; i++) {
+		if (listInputs[i] === true) {
+			error = true;
+			break;
+		}
+	}
+	console.log(error)
+	if (!error) {
+		console.log('ОТПРАВКА')
+		/* Здесь нужно отправлять данные для получения скидки */
+	}
+});
 
 if (calcCart[0].classList.contains('calc__variants')) {
 	let totalPrice = null;
